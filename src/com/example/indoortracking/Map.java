@@ -75,44 +75,56 @@ public class Map extends Activity {
 
 				Random gen = new Random();
 				//dimensions on map image on android
+				
+				//black space above map image
+				int y_padding_top = 25;
+				int y_padding_bottom = 25;
 				int map_width = 480;
-				int map_height = 724;
+				int map_height = 724 - (y_padding_top + y_padding_bottom);
 				
 				//dimensions of map image in web app
 				int web_width = 1279;
 				int web_height = 1795;
+				Integer x_input = gen.nextInt(map_width);
+				Integer y_input = gen.nextInt(map_height);
 				
-				Integer x = gen.nextInt(map_width);
-				Integer y = gen.nextInt(map_height);
+				float x_scale = (float) web_width / map_width;
+				float y_scale = (float) web_height / map_height;
+				//x has no padding on either side.
+				//adjust for the tip of the marker which is at the bottom middle. The marker should be scaled down
+				//at the same amount as the map. I'm fudging these a little bit because the scaling is off.
+				Integer x_adjusted = x_input - 16;
+				Integer y_adjusted = y_padding_top + y_input - 36;
+				
 				//remove previous
 				if(tempView != null){
 					mainLayout.removeView(tempView); 
 				}
-
+				
 				//plot marker
-				tempView = new MyCustomView(context, x, y); 
+				tempView = new MyCustomView(context, x_adjusted, y_adjusted); 
+				
 				layoutParam = new RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 				layoutParam.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 				mainLayout.addView(tempView,layoutParam); 
-
+				
 				//calculate position for web app (Openlayers coordinate system)
-				float x_scale = (float) web_width / map_width;
-				float y_scale = (float) web_height / map_height;
+				
 				int x_mid = web_width / 2;
 				int y_mid = web_height / 2;
-				Integer x_out = (int) (x * x_scale);
-				Integer y_out = (int)(y * y_scale);
+				Integer x_out = (int) (x_input * x_scale);
+				Integer y_out = (int)(y_input * y_scale);
 				if(x_out >= x_mid){
 					//past middle
-					x_out = (int) (x_out - web_width/2);
+					x_out = (x_out - web_width/2);
 				} else{
 					//less than middle
-					x_out = -1 * (web_width / 2 - x_out);
+					x_out = -1 *  (web_width / 2 - x_out);
 				}
 				
 				if(y_out >= y_mid){
 					//past middle
-					y_out = -1* (int) (y_out - (web_height/2));
+					y_out = -1*  (y_out - (web_height/2));
 				} else{
 					//less than middle
 					y_out = (web_height / 2 - y_out);
