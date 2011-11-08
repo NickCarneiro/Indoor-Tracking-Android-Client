@@ -1,0 +1,103 @@
+8
+
+dir
+37
+https://lolstack.com/svn/seniordesign/IndoorTracking
+https://lolstack.com/svn/seniordesign
+
+
+
+2011-11-06T18:08:38.587535Z
+37
+mhade
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+77508a73-c721-4985-8ede-8da2b55a3c93
+
+.classpath
+file
+
+
+
+
+2011-11-07T19:51:32.829000Z
+8ec20b14df17ef83253beda6c391f516
+2011-10-13T05:45:51.951066Z
+14
+mhade
+
+.project
+file
+
+
+
+
+2011-11-07T19:51:32.874000Z
+b0e625a2cee4331e2e1ef421286dc7c9
+2011-10-13T05:45:51.951066Z
+14
+mhade
+
+AndroidManifest.xml
+file
+
+
+
+
+2011-11-07T19:51:32.880000Z
+3d8f54bddc5a4ca86aa2cbaef2a6bf32
+2011-10-13T18:14:43.992927Z
+17
+rohan
+
+assets
+dir
+
+bin
+dir
+
+default.properties
+file
+
+
+
+
+2011-11-07T19:51:32.823000Z
+77055d1fa9eecbddd7b18cbb98735c1b
+2011-10-13T05:45:51.951066Z
+14
+mhade
+
+gen
+dir
+
+proguard.cfg
+file
+
+
+
+
+2011-11-07T19:51:32.835000Z
+03ea0fdd0a4aabc43b80216d64438921
+2011-10-13T05:45:51.951066Z
+14
+mhade
+
+res
+dir
+
+src
+dir
+

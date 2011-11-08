@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TextView  
+	android:id="@+id/textViewAppNameAbout"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/stringAppName"
+    android:gravity="center_horizontal"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    />
+<TextView  
+	android:id="@+id/textViewAbout"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/stringAboutItpns"
+    android:layout_below="@id/textViewAppNameAbout"
+    />   
+       <Button
+   		android:id="@+id/buttonBackMapAbout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom = "true"
+        android:text="@string/stringBackMap" /> 
+    
+</RelativeLayout>

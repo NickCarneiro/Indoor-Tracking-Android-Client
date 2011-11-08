@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/seniordesign/!svn/ver/37/IndoorTracking
+END
+AndroidManifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/seniordesign/!svn/ver/17/IndoorTracking/AndroidManifest.xml
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/seniordesign/!svn/ver/14/IndoorTracking/.classpath
+END
+default.properties
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/seniordesign/!svn/ver/14/IndoorTracking/default.properties
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/seniordesign/!svn/ver/14/IndoorTracking/.project
+END
+proguard.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/seniordesign/!svn/ver/14/IndoorTracking/proguard.cfg
+END

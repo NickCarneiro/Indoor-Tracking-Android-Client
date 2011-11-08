@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, indoortracking!</string>
+	<string name="stringAppName">Indoor Tracking and Personal Navigation</string>
+	<string name="stringInputInitialLocation">Input Initial Location</string>
+	<string name="stringUserAgreement">Welcome to the Indoor Tracking and Personal
+		Navigation Application. By clicking on the Proceed button below,
+		you grant
+		this application permission to track your position within
+		this
+		facility. In addition, the application will transmit your position to
+		facility administrators. The purpose of this application is to provide
+		you with navigation assistance and help mall administrators
+		personalize the shopping experience. If you do
+		not agree with the terms
+		and conditions of this application, please
+		hit Exit to leave the
+		application. </string>
+	<string name="stringProceed">Proceed</string>
+	<string name="stringExit">Exit</string>
+	<string name="stringItpns">ITPNS</string>
+	<string name="stringBackButton">Back</string>
+	<string name="stringBackMap">Back to Map</string>
+	<string name="stringAboutItpns">This application was designed by Merwan Hade, Nick Carneiro, Rohan Singhal, Tim Osborne, and Harish Rallapalle. It provides navigational assistance to its users and allows mall administrators to build useful statistics. </string>
+	<string name="stringHelpContent">If you need any assistance, please contact merwanhade@gmail.com </string>
+	<string name="stringMap">Map</string>
+	<string name="stringAbout">About</string>
+	<string name="stringHelp">Help</string>
+	<string name="stringTransmit">Transmit </string>
+</resources>
