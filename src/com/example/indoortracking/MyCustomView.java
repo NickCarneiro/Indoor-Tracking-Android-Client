@@ -14,7 +14,7 @@ public class MyCustomView extends View{
 		super(context);
 		this.x = x; 
 		this.y = y;
-		bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.marker);
+		bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.marker_pixel);
 	}
 
 	protected void onDraw(Canvas pCanvas){

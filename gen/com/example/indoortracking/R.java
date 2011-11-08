@@ -15,8 +15,9 @@ public final class R {
         public static final int icon=0x7f020001;
         public static final int mapicon=0x7f020002;
         public static final int marker=0x7f020003;
-        public static final int questionmark=0x7f020004;
-        public static final int sixthfloor=0x7f020005;
+        public static final int marker_pixel=0x7f020004;
+        public static final int questionmark=0x7f020005;
+        public static final int sixthfloor=0x7f020006;
     }
     public static final class id {
         public static final int buttonBack=0x7f06000a;

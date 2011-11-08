@@ -35,20 +35,18 @@ public class Map extends Activity {
 	public static RelativeLayout mainLayout; 
 	public static Context context; 
 	public static RelativeLayout.LayoutParams layoutParam; 
-	public static boolean firstTime; 
-	public static boolean alreadyAdded; 
+	public static String device_id;
 	MyCustomView tempView = null;
 	Button buttonTransmit;
 		
-	public void plotPoint(){
-	}
+	
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.map);
-		 
-		final RelativeLayout mainLayout = (RelativeLayout)findViewById(R.layout.relLayout); 
-		//Line added 
+		Random gen = new Random();
+		device_id = "device " + gen.nextInt(10000);
+		final RelativeLayout mainLayout = (RelativeLayout)findViewById(R.layout.relLayout);
 		context = this; 
 		
 	
@@ -61,7 +59,6 @@ public class Map extends Activity {
 				}
 		});
 		
-		ArrayList<Integer> points = new ArrayList<Integer>();
 		
 		Button buttonTransmit = (Button) findViewById(R.id.buttonTransmit);
 		buttonTransmit.setOnClickListener(new View.OnClickListener()  {
@@ -77,50 +74,54 @@ public class Map extends Activity {
 
 
 				Random gen = new Random();
-				Integer x = gen.nextInt(480);
-				Integer y = gen.nextInt(724);
+				//dimensions on map image on android
+				int map_width = 480;
+				int map_height = 724;
+				
+				//dimensions of map image in web app
+				int web_width = 1279;
+				int web_height = 1795;
+				
+				Integer x = gen.nextInt(map_width);
+				Integer y = gen.nextInt(map_height);
 				//remove previous
 				if(tempView != null){
 					mainLayout.removeView(tempView); 
 				}
 
-
-
-				Display display = getWindowManager().getDefaultDisplay(); 
-				
-				int width = display.getWidth();
-				int height = display.getHeight();
-				System.out.println("BOTTOM " + mainLayout.getBottom());
-				System.out.println("TOP " + mainLayout.getTop());
-				System.out.println("LEFT " + mainLayout.getLeft());
-				System.out.println("RIGHT " + mainLayout.getRight());
-				
-				
+				//plot marker
 				tempView = new MyCustomView(context, x, y); 
 				layoutParam = new RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 				layoutParam.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-
-
-
 				mainLayout.addView(tempView,layoutParam); 
-				ImageView img = (ImageView)findViewById(R.id.sixthFloorMap);
-				int x_image = img.getWidth(); 
-				int y_image = img.getHeight(); 
-				System.out.println("x image "+ x_image + "y image "+ y_image);
 
-				Integer image_width = 480;
-				Integer image_height = 697;
+				//calculate position for web app (Openlayers coordinate system)
+				float x_scale = (float) web_width / map_width;
+				float y_scale = (float) web_height / map_height;
+				int x_mid = web_width / 2;
+				int y_mid = web_height / 2;
+				Integer x_out = (int) (x * x_scale);
+				Integer y_out = (int)(y * y_scale);
+				if(x_out >= x_mid){
+					//past middle
+					x_out = (int) (x_out - web_width/2);
+				} else{
+					//less than middle
+					x_out = -1 * (web_width / 2 - x_out);
+				}
 				
-				float x_scale = 1279 / image_width;
-				float y_scale = 1795 / image_height;
-				System.out.println("x orig "+ x + "y orig "+ y);
-				//convert to OpenLayers coordinate system.
-				Integer x_out = (int) (x * x_scale - 1279/2);
-				Integer y_out = (int)(-1*y * y_scale + 1795/2);
+				if(y_out >= y_mid){
+					//past middle
+					y_out = -1* (int) (y_out - (web_height/2));
+				} else{
+					//less than middle
+					y_out = (web_height / 2 - y_out);
+				}
+				
 				System.out.println("x "+ x_out + "y "+ y_out);
 				pairsN.add(new BasicNameValuePair("x", x_out.toString()));
 				pairsN.add(new BasicNameValuePair("y", y_out.toString()));
-				pairsN.add(new BasicNameValuePair("device_id", "Merwan's"));
+				pairsN.add(new BasicNameValuePair("device_id", device_id));
 				try {
 					postN.setEntity(new UrlEncodedFormEntity(pairsN));
 					pairsN.clear();
