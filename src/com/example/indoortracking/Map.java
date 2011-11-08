@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
@@ -45,6 +46,7 @@ public class Map extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.map);
+		 
 		final RelativeLayout mainLayout = (RelativeLayout)findViewById(R.layout.relLayout); 
 		//Line added 
 		context = this; 
@@ -59,19 +61,24 @@ public class Map extends Activity {
 				}
 		});
 		
+		ArrayList<Integer> points = new ArrayList<Integer>();
+		
 		Button buttonTransmit = (Button) findViewById(R.id.buttonTransmit);
 		buttonTransmit.setOnClickListener(new View.OnClickListener()  {
 			public void onClick(View v) {
-
-				System.out.println("button pressed");
+				
+				//print screen size
+				
 				HttpClient client = new DefaultHttpClient();
 
 				List<NameValuePair> pairsN = new ArrayList<NameValuePair>();
+				
 				HttpPost postN = new HttpPost(address); 
 
 
 				Random gen = new Random();
-				Integer i = gen.nextInt(300);
+				Integer x = gen.nextInt(480);
+				Integer y = gen.nextInt(724);
 				//remove previous
 				if(tempView != null){
 					mainLayout.removeView(tempView); 
@@ -79,18 +86,40 @@ public class Map extends Activity {
 
 
 
-
-				tempView = new MyCustomView(context, i, i); 
+				Display display = getWindowManager().getDefaultDisplay(); 
+				
+				int width = display.getWidth();
+				int height = display.getHeight();
+				System.out.println("BOTTOM " + mainLayout.getBottom());
+				System.out.println("TOP " + mainLayout.getTop());
+				System.out.println("LEFT " + mainLayout.getLeft());
+				System.out.println("RIGHT " + mainLayout.getRight());
+				
+				
+				tempView = new MyCustomView(context, x, y); 
 				layoutParam = new RelativeLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 				layoutParam.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 
 
 
 				mainLayout.addView(tempView,layoutParam); 
+				ImageView img = (ImageView)findViewById(R.id.sixthFloorMap);
+				int x_image = img.getWidth(); 
+				int y_image = img.getHeight(); 
+				System.out.println("x image "+ x_image + "y image "+ y_image);
+
+				Integer image_width = 480;
+				Integer image_height = 697;
 				
-				
-				pairsN.add(new BasicNameValuePair("x", ""+i));
-				pairsN.add(new BasicNameValuePair("y", ""+i));
+				float x_scale = 1279 / image_width;
+				float y_scale = 1795 / image_height;
+				System.out.println("x orig "+ x + "y orig "+ y);
+				//convert to OpenLayers coordinate system.
+				Integer x_out = (int) (x * x_scale - 1279/2);
+				Integer y_out = (int)(-1*y * y_scale + 1795/2);
+				System.out.println("x "+ x_out + "y "+ y_out);
+				pairsN.add(new BasicNameValuePair("x", x_out.toString()));
+				pairsN.add(new BasicNameValuePair("y", y_out.toString()));
 				pairsN.add(new BasicNameValuePair("device_id", "Merwan's"));
 				try {
 					postN.setEntity(new UrlEncodedFormEntity(pairsN));

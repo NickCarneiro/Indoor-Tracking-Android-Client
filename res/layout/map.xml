@@ -6,7 +6,7 @@
     >
     <ImageView 
    android:id="@+id/sixthFloorMap"
-   android:src="@drawable/sixthfloor"
+   android:src="@drawable/ens_6"
    android:layout_width="fill_parent"
    android:layout_height="fill_parent"
    android:layout_below="@id/textViewAppName"
