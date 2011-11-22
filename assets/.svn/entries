@@ -1,9 +1,9 @@
-8
+10
 
 dir
-37
-https://lolstack.com/svn/seniordesign/IndoorTracking/assets
-https://lolstack.com/svn/seniordesign
+50
+http://lolstack.com/svn/seniordesign/IndoorTracking/assets
+http://lolstack.com/svn/seniordesign
 
 
 
@@ -12,7 +12,7 @@ https://lolstack.com/svn/seniordesign
 mhade
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 

@@ -1,18 +1,18 @@
-8
+10
 
 dir
-37
-https://lolstack.com/svn/seniordesign/IndoorTracking/res
-https://lolstack.com/svn/seniordesign
+50
+http://lolstack.com/svn/seniordesign/IndoorTracking/res
+http://lolstack.com/svn/seniordesign
 
 
 
-2011-10-27T04:48:57.865802Z
-19
+2011-11-22T04:44:35.771449Z
+47
 mhade
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -26,7 +26,13 @@ svn:special svn:externals svn:needs-lock
 
 77508a73-c721-4985-8ede-8da2b55a3c93
 
+values
+dir
+
 drawable-hdpi
+dir
+
+menu
 dir
 
 drawable-ldpi
@@ -36,11 +42,5 @@ drawable-mdpi
 dir
 
 layout
-dir
-
-menu
-dir
-
-values
 dir
 

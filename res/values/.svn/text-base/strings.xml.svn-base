@@ -19,10 +19,10 @@
 	<string name="stringProceed">Proceed</string>
 	<string name="stringExit">Exit</string>
 	<string name="stringItpns">ITPNS</string>
-	<string name="stringBackButton">Back</string>
+	<string name="stringBackButton">Back to User Agreement</string>
 	<string name="stringBackMap">Back to Map</string>
-	<string name="stringAboutItpns">This application was designed by Merwan Hade, Nick Carneiro, Rohan Singhal, Tim Osborne, and Harish Rallapalle. It provides navigational assistance to its users and allows mall administrators to build useful statistics. </string>
-	<string name="stringHelpContent">If you need any assistance, please contact merwanhade@gmail.com </string>
+	<string name="stringAboutItpns">This application was designed by Merwan Hade, Nick Carneiro, Rohan Singhal, Tim Osborne, and Harish Rallapalli. It provides navigational assistance to its users and allows mall administrators to build useful statistics. </string>
+	<string name="stringHelpContent">If you need any assistance, please contact Merwan Hade at merwanhade@gmail.com </string>
 	<string name="stringMap">Map</string>
 	<string name="stringAbout">About</string>
 	<string name="stringHelp">Help</string>

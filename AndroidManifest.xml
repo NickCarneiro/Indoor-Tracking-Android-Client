@@ -4,18 +4,33 @@
       android:versionCode="1"
       android:versionName="1.0">
  <uses-sdk android:minSdkVersion="8" />
+ <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+        <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
 <uses-permission android:name="android.permission.INTERNET" />
-    <application android:icon="@drawable/mapicon" android:label="@string/stringItpns" android:debuggable="true">
+    <application android:icon="@drawable/indoor_tracking_icon" android:label="@string/stringItpns" android:debuggable="true" >
         <activity android:name=".indoortracking"
-                  android:label="@string/stringItpns">
+                  android:label="@string/stringItpns"
+                  android:screenOrientation="portrait"
+                  android:configChanges="orientation|keyboardHidden|keyboard"
+                  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
     	</activity>
-    	<activity android:name=".Map" />
-    	<activity android:name=".Help" />
-    	<activity android:name=".About" />
+    	<activity android:name=".Map" 
+    	android:screenOrientation="portrait"
+    	android:configChanges="orientation|keyboardHidden|keyboard"
+    	/>
+    	<activity android:name=".Help"
+    	android:screenOrientation="portrait" 
+    	android:configChanges="orientation|keyboardHidden|keyboard"/>
+    	<activity android:name=".About" 
+    	android:screenOrientation="portrait"
+    	android:configChanges="orientation|keyboardHidden|keyboard"/>
     </application>
 
 </manifest>

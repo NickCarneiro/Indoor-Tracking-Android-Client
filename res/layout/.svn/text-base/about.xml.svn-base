@@ -13,12 +13,18 @@
     android:textSize="18sp"
     android:textStyle="bold"
     />
+     <View
+     	android:id="@+id/blankView"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_below = "@id/textViewAppNameAbout"
+        />    
 <TextView  
 	android:id="@+id/textViewAbout"
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
     android:text="@string/stringAboutItpns"
-    android:layout_below="@id/textViewAppNameAbout"
+    android:layout_below="@id/blankView"
     />   
        <Button
    		android:id="@+id/buttonBackMapAbout"

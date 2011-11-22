@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/svn/seniordesign/!svn/ver/19/IndoorTracking/res/layout
+/svn/seniordesign/!svn/ver/47/IndoorTracking/res/layout
 END
-help.xml
+movablemap.xml
 K 25
 svn:wc:ra_dav:version-url
-V 64
-/svn/seniordesign/!svn/ver/16/IndoorTracking/res/layout/help.xml
-END
-map.xml
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/svn/seniordesign/!svn/ver/19/IndoorTracking/res/layout/map.xml
+V 70
+/svn/seniordesign/!svn/ver/38/IndoorTracking/res/layout/movablemap.xml
 END
 main.xml
 K 25
@@ -21,15 +15,27 @@ svn:wc:ra_dav:version-url
 V 64
 /svn/seniordesign/!svn/ver/14/IndoorTracking/res/layout/main.xml
 END
-about.xml
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/svn/seniordesign/!svn/ver/16/IndoorTracking/res/layout/about.xml
-END
 useragreement.xml
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/seniordesign/!svn/ver/19/IndoorTracking/res/layout/useragreement.xml
+/svn/seniordesign/!svn/ver/42/IndoorTracking/res/layout/useragreement.xml
+END
+help.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/seniordesign/!svn/ver/42/IndoorTracking/res/layout/help.xml
+END
+about.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/seniordesign/!svn/ver/42/IndoorTracking/res/layout/about.xml
+END
+map.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/seniordesign/!svn/ver/47/IndoorTracking/res/layout/map.xml
 END

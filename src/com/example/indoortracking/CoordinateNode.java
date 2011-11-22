@@ -9,7 +9,5 @@ public class CoordinateNode {
 		this.xCoordinate = x;
 		this.yCoordinate = y;
 		this.deviceId = deviceId;
-		
 	}
-	
 }

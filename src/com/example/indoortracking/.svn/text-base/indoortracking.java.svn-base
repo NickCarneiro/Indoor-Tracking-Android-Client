@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 public class indoortracking extends Activity {
 	/** Called when the activity is first created. */
-
+	 
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,7 +36,6 @@ public class indoortracking extends Activity {
 		final Button buttonProceed = (Button) findViewById(R.id.buttonProceed);
 		buttonProceed.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				//setContentView(R.layout.map);
 				startActivity(new Intent(indoortracking.this, Map.class));
 			}
 		});

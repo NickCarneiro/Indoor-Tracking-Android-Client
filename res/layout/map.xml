@@ -6,7 +6,7 @@
     >
     <ImageView 
    android:id="@+id/sixthFloorMap"
-   android:src="@drawable/ens_6"
+   android:src="@drawable/ens_2"
    android:layout_width="fill_parent"
    android:layout_height="fill_parent"
    android:layout_below="@id/textViewAppName"
@@ -16,14 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
        	android:layout_alignParentBottom = "true"
-        android:layout_alignParentLeft = "true"
+        android:layout_centerHorizontal = "true"
         android:text="@string/stringBackButton" /> 
-	<Button
-   		android:id="@+id/buttonTransmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       	android:layout_alignParentBottom = "true"
-       	android:layout_alignParentRight = "true"
-        android:text="@string/stringTransmit" 
-        /> 
+	
     </RelativeLayout>
