@@ -354,6 +354,23 @@ public class Map extends Activity {
 				matches.get(minIndex).point.getX();
 				matches.get(minIndex).point.getY();		*/
 
+/*
+Rohan's explanation of the following code:
+How I do the closest match is by doing a minimum difference. 
+So I have a vector of values that contains the real-time data, 
+and another vector for each co-ordinate in the table. 
+
+The dot product for each access point in the vectors is calculated 
+by doing the fingerprint value squared minus the fingerprint value*real time value. 
+The idea being that the closer together the real time and fingerprint values, 
+the smaller their difference. But if there is an access point that is only in 
+the real time vector but not the fingerprint, how I account for it is by adding 
+the value for that point^2. Hence, this is the "penalty for non-containment." 
+I do this for every co-ordinate in the fingerprint table (each co-ordinate in 
+turn has a vector of access point RSSI values, stored as a hashmap), and just 
+keep a running minimum. The minimum value at the end is the point I want.
+
+*/
 			float minDot = Float.MAX_VALUE;
 			//apply logic from above else loop here also
 			for (PointWithRSSI p : compare) {
